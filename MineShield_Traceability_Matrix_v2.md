@@ -120,7 +120,7 @@ FR-007 — Fall Detection Using Smartphone Accelerometer                        
 
 ********************************************************
 
-FR-009 and FR-010 — Threshold Alerts and SOS with Last Known Location                  Priority: High
+FR-009 and FR-010 — Threshold Alerts and SOS with Last Known Location                  Priority: Medium
 
 |36| Firebase Service:       Firebase Cloud Messaging (FCM) | Firestore
 |37| Source File:            src/services/notificationService.js | src/services/locationService.js | src/services/alertService.js | src/components/alerts/SOSModal.js | src/components/alerts/AlertBanner.js
@@ -156,7 +156,7 @@ FR-012 and FR-013 — Past Hazard Reports and Analytics                         
 
 ********************************************************
 
-FR-014 — Limited Features for Visitors                                                 Priority: High
+FR-014 — Limited Features for Visitors                                                 Priority: Low
 
 |57| Firebase Service:       Firestore
 |58| Source File:            src/screens/visitor/VisitorDashboardScreen.js | src/screens/visitor/VisitorHazardsScreen.js | src/screens/visitor/VisitorAlertScreen.js
