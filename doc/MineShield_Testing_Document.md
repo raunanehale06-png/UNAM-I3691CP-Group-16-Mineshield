@@ -359,7 +359,7 @@ Tests of situations users might encounter in normal usage, conducted to prevent 
 |-------|----------|----------|----------|
 | **User / Role** | Tegameno – Supervisor | Ernesto – Worker | Queen – Visitor |
 | **Device** | Samsung | Samsung | Samsung |
-| **Android Version** | Android 13 | Android 12 | Android 11 |
+| **Android Version** | Android 16 | Android 15 | Android 13 |
 | **Final Test Date** | 31/05/2026 | 31/05/2026 | 31/05/2026 |
 
 ### Test Results Across 15 Functions
