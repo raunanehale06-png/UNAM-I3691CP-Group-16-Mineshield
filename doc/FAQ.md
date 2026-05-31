@@ -9,7 +9,7 @@ A: To provide supervisors with your last known location during emergencies. When
 A: Yes – hazard reports are stored locally and sync automatically when connection returns. Real-time features (live map, push notifications) require internet.
 
 ### Q: Which Android versions are supported?
-A: Android 10 through 13. Tested on Samsung Galaxy S10, S20, S22, and Pixel devices.
+A: Android 13, 15 and 16. Tested on Samsung Tab A9, Samsung A06 and Samsung A03 core.
 
 ### Q: Is there an iOS version?
 A: Not in this phase. The SRS specifies Android 10+ only.
