@@ -1,5 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as Location from 'expo-location';
+
+import { sanitizeLocationLabel } from '../services/locationService';
+
+const joinAddressParts = (parts) => parts.filter(Boolean).join(', ');
 
 const createLocationStatus = (value, hint, extras = {}) => ({
   value,
@@ -9,24 +13,42 @@ const createLocationStatus = (value, hint, extras = {}) => ({
   longitude: extras.longitude ?? null,
 });
 
-const formatCoordinates = (latitude, longitude) =>
-  `${latitude.toFixed(4)}, ${longitude.toFixed(4)}`;
+const buildAddressLabel = (place) =>
+  joinAddressParts([
+    place?.name,
+    place?.street,
+    place?.district,
+    place?.city,
+    place?.region,
+  ]);
 
 export default function useLocation() {
   const [locationStatus, setLocationStatus] = useState(
     createLocationStatus('Starting...', 'GPS live')
   );
+  const lookupIdRef = useRef(0);
 
   useEffect(() => {
     let isMounted = true;
     let locationSubscription = null;
 
-    const applyCoordinates = ({ latitude, longitude }) => {
-      if (!isMounted) {
+    const applyCoordinates = async ({ latitude, longitude }) => {
+      const lookupId = lookupIdRef.current + 1;
+      lookupIdRef.current = lookupId;
+
+      let label = 'Current GPS location';
+
+      try {
+        const [place] = await Location.reverseGeocodeAsync({ latitude, longitude });
+        label = sanitizeLocationLabel(buildAddressLabel(place), label);
+      } catch (error) {
+        console.log('Live GPS reverse geocoding failed:', error);
+      }
+
+      if (!isMounted || lookupId !== lookupIdRef.current) {
         return;
       }
 
-      const label = formatCoordinates(latitude, longitude);
       setLocationStatus(
         createLocationStatus(label, 'GPS live', {
           label,
@@ -52,7 +74,7 @@ export default function useLocation() {
         const currentPosition = await Location.getCurrentPositionAsync({
           accuracy: Location.Accuracy.Balanced,
         });
-        applyCoordinates(currentPosition.coords);
+        await applyCoordinates(currentPosition.coords);
 
         locationSubscription = await Location.watchPositionAsync(
           {
@@ -82,3 +104,4 @@ export default function useLocation() {
 
   return locationStatus;
 }
+
