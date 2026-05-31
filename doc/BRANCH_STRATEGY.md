@@ -1,1 +1,1 @@
-
+# Branch Strategy - main → stable production code - develop → integration branch - feature/phase3-files-[membername] → each member’s assigned files - hotfix/* → urgent fixes ## Rules - Always branch from develop - Commit only your 6 assigned files - Use clear commit messages (feat:, fix:, docs:) - Create Pull Request to develop before deadline
