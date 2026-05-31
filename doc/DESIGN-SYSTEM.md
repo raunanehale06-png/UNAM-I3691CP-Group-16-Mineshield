@@ -1,67 +1,45 @@
-# MineShield Mobile Application — Design System Guidelines
+# MineShield Mobile Application — Production Design System
 
-## 1. Design Philosophy
-The MineShield UI/UX architecture is engineered for high-stress, low-visibility industrial mining environments. The interface prioritizes maximum information density, rapid cognitive processing, and strict behavioral role contrasts across Worker, Supervisor, and Visitor operational contexts.
-
----
-
-## 2. Color Palette & Semantic Hierarchy
-
-### 2.1 Base Colors
-*   **Background (Deep Slate Navy):** `#0A1C2A` / `#0D1E2D`
-    *   *Usage:* Global screen backgrounds to prevent eye strain and save device battery life under active duty conditions.
-*   **Card Container Background (Muted Charcoal/Blue):** `#132637`
-    *   *Usage:* Surfaces for metric modules, list containers, and structural sections.
-*   **Border Strokes:** `#20384E`
-    *   *Usage:* Subtle separation boundaries for quick grid alignment.
-
-### 2.2 Brand Accent
-*   **Primary Active Orange:** `#FF8C00` / `#FA8100`
-    *   *Usage:* Secure login actions, active navigation tabs, active role selectors, and core branding elements.
-
-### 2.3 Emergency & Priority Status Hierarchy (Semantic Colors)
-*   **High Alert / Danger / Emergency Red:** `#D31515` (Containers) | `#FF1F1F` (Text/Badges)
-    *   *Usage:* SOS triggers, immediate hazard markers, Danger Zones, "Critical Incidents" metric cards, and "High" priority background indicators.
-*   **Medium Alert / Warning Yellow-Orange:** `#D38015` / `#FFA500`
-    *   *Usage:* Gas leaks, equipment failure reports, Warning Zones, and "Medium" priority tracking badges.
-*   **Low Alert / Safe Operational Green:** `#158343` / `#00C853`
-    *   *Usage:* Resolved statuses, Safe Zones, "Workers Online" badges, and safe vitals indicators.
+## 1. Design Vision & Context
+Following final integration testing on hardware devices, the MineShield interface was pivoted from a dark theme to a High-Visibility Light Theme. This optimization guarantees pristine contrast ratios, removes background alpha-rendering artifacts, and ensures text and critical telemetry remain legible under intense glare or high-stress industrial mining conditions.
 
 ---
 
-## 3. Typography & Hierarchy
+## 2. Layout Grid & Spatial Architecture
 
-*   **Primary Font Family:** System Sans-Serif (`Roboto` for Android / `SF Pro` for iOS)
-*   **Title Large (e.g., "OVERVIEW", "LIVE MINE MAPS"):** `22px` | Bold | Uppercase | Letter Spacing: `0.5px`
-*   **Hero Metric Value (e.g., "128", "86"):** `32px` | Extra Bold | Color: `#FFFFFF`
-*   **Body Content (e.g., "Rock fall Reported"):** `14px` | Semi-Bold | Color: `#FFFFFF`
-*   **Secondary Caption (e.g., "Zone A1", "+12% vs yesterday"):** `12px` | Regular | Color: Muted Gray (`#A0AAB2`) or matching semantic alert color.
+*   **Global Canvas Backdrop:** A soft, desaturated off-white/blue tint that minimizes eye fatigue while maintaining high ambient contrast.
+*   **Card Container Surface:** Elevated, pure white modules utilizing subtle outer borders and low-opacity drop shadows to establish structural depth and scannability.
+*   **Global Border Radius:** All metric blocks, interaction inputs, and layout containers follow a unified `16px` to `20px` curvature standard for a modern, cohesive interface.
 
 ---
 
-## 4. Key Reusable Components (As Designed)
+## 3. Typography Hierarchy
 
-### 4.1 Role Navigation Selector (`Splash_Screen`)
-*   **Structure:** Capsule layout tracking horizontal tabs (`Worker`, `Supervisor`, `Visitor`).
-*   **Behavior:** Active selection snaps with a bold background capsule pill (`#FA8100` for active role, unselected roles maintain muted grey text).
+*   **Font Family:** System Sans-Serif (`Roboto` for Android / `SF Pro` for iOS).
+*   **Primary Section Headers:** `20px` | Heavy Bold | Uppercase | Color: Deep Navy (`#1E2E4A`).
+*   **Sub-branding Subtitles:** `13px` | Regular | Color: Slate Steel Gray (`#7A8B9E`).
+*   **Primary Hero Metrics:** `28px` to `32px` | Bold | Color: Deep Navy (`#1E2E4A`).
+*   **Component Card Labels:** `14px` | Semi-Bold | Color: Medium Slate (`#4A5A6A`).
 
-### 4.2 Supervisor Overview Metrics Carousel
-*   **Structure:** Multi-card horizontal swipe layout.
-*   **Dimensions:** Fixed width aspect-ratio bounding boxes utilizing conditional semantic borders.
-*   **Interaction:** Allows the supervisor to pan between high-level operational values seamlessly:
-    1.  *Total Hazards:* Gold-Orange border wrap (`#FFA500`)
-    2.  *Workers Online:* Safe Green border wrap (`#00C853`)
-    3.  *Active Alerts:* Dark Red border wrap (`#FF1F1F`)
-    4.  *Critical Incidents:* Danger Red fill/border wrap (`#D31515`)
-    5.  *Avg Response Time:* Tech Blue border wrap (`#0091EA`)
+---
 
-### 4.3 Live Mine Map Interface 
-*   **Map Container:** Dark geographic/schematic map rendering backdrop.
-*   **Overlays:** Transparent vector-bounded polygon zones with dashed color thresholds:
-    *   *Safe Zone:* Green dash outline with low opacity green fill color.
-    *   *Warning Zone:* Orange dash outline with low opacity orange fill color.
-    *   *Danger Zone:* Red dash outline with low opacity red fill color.
-*   **Status Pins:** Concentric circle pulse nodes indicating active event triggers (`Resolved` = Checked Green Map Pin, `Pending` = Pulsing Red Communication Message Pin).
+## 4. Reusable UI Component Specifications
 
-### 4.4 List Item Roster Cards (`Recent Alerts`)
-*   **Layout:** Row layout with explicit left-hand hazard icon markers (e.g., warning triangle) and explicit right-hand semantic solid text priority badges (`HIGH`, `MEDIUM`, `LOW`) matching the defined operational system status colors.
+### 4.1 Welcome / Sync Banner
+*   **Visual Structure:** Top-anchored, full-width card styled with an abstract geometric blue circular overlay graphic on the right boundary.
+*   **Behavior:** Houses personalized profile greetings and dynamic database status indicators (e.g., "Your control room is syncing in real time.").
+
+### 4.2 Quad-Grid Action Metrics
+*   **Layout:** A symmetrical $2 \times 2$ grid matrix dividing real-time site data into high-priority visual buckets.
+*   **Aesthetic Styling:**
+    *   *Active Hazards:* Soft Amber background block with a thin muted amber stroke perimeter.
+    *   *Resolved Today:* Soft Green background block with a thin sage green stroke perimeter.
+    *   *Live SOS / Safe Zones:* Crisp light gray/blue tint panels emphasizing active numerical data tracking.
+
+### 4.3 Floating Persistent Navigation Dock
+*   **Structure:** A bottom-anchored, rounded navigation island suspended gracefully above scrolling page content.
+*   **Active States:** Houses five icon markers (`Home`, `Alerts`, `Logs`, `Analytics`, `Settings`). The active panel state is boldly signaled using a solid safety-orange filled circular button base, while inactive choices rest on clear light-blue outlines.
+
+### 4.4 Environmental Telemetry Matrix
+*   **Layout:** Split-column data cards mapping individual atmospheric sensor feeds.
+*   **Visual Indicators:** Integrates horizontal, solid fill progress indicator bars (e.g., Threat Level Index at 100%) color-coded to map structural or gas threat severity directly.eft-hand hazard icon markers (e.g., warning triangle) and explicit right-hand semantic solid text priority badges (`HIGH`, `MEDIUM`, `LOW`) matching the defined operational system status colors.
