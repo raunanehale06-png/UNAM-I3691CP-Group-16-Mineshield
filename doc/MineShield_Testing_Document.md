@@ -302,9 +302,9 @@
 | **Expected Result** | Hazard reporting NOT visible. Visitor cannot submit reports. Read-only access. |
 | **Actual Result** | Report Hazard button hidden. Navigation to report screen blocked. Message: "Zones are not currently being tracked in live feed" (expected behaviour). |
 | **Status** | Pass |
-| **Android 11** | Pass |
-| **Android 12** | Pass |
 | **Android 13** | Pass |
+| **Android 15** | Pass |
+| **Android 16** | Pass |
 
 ---
 
