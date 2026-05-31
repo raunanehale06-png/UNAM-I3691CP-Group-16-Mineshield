@@ -62,9 +62,9 @@
 
 | Device | Android Version | Role | Tests Executed | Pass | Fail | Blocked |
 |--------|-----------------|------|----------------|------|------|---------|
-| Samsung A03 Core | 13 | Supervisor | 15 | 15 | 0 | 0 |
-| Samsung S21 | 15 | Worker | 15 | 15 | 0 | 0 |
-| Samsung A12 | 16 | Visitor | 15 | 15 | 0 | 0 |
+| Samsung Tab A9 | 16 | Supervisor | 15 | 15 | 0 | 0 |
+| Samsung A06 | 15 | Worker | 15 | 15 | 0 | 0 |
+| Samsung A03 core | 13 | Visitor | 15 | 15 | 0 | 0 
 
 ---
 
