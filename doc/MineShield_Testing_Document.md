@@ -364,7 +364,7 @@ Tests of situations users might encounter in normal usage, conducted to prevent 
 
 ### Test Results Across 15 Functions
 
-| FR Ref | Feature | Phone #1 — Android 13 (Supervisor) | Phone #2 — Android 12 (Worker) | Phone #3 — Android 11 (Visitor) | Overall |
+| FR Ref | Feature | Phone #1 — Android 16 (Supervisor) | Phone #2 — Android 15 (Worker) | Phone #3 — Android 13 (Visitor) | Overall |
 |--------|---------|-------------------------------------|-------------------------------|----------------------------------|---------|
 | FR-001, FR-002 | User Registration & Login | Pass | Pass | Pass | Pass |
 | FR-003, FR-015 | Hazard Reporting + Image Upload | Pass | Pass | Pass | Pass |
