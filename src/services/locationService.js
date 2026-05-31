@@ -2,8 +2,17 @@ import * as Location from 'expo-location';
 
 const joinAddressParts = (parts) => parts.filter(Boolean).join(', ');
 
-const formatCoordinates = (latitude, longitude) =>
-  `${latitude.toFixed(5)}, ${longitude.toFixed(5)}`;
+const COORDINATE_LABEL_PATTERN = /^\s*-?\d+(?:\.\d+)?\s*,\s*-?\d+(?:\.\d+)?\s*$/;
+
+export const sanitizeLocationLabel = (value, fallback = 'GPS location') => {
+  const label = String(value || '').trim();
+
+  if (!label || COORDINATE_LABEL_PATTERN.test(label)) {
+    return fallback;
+  }
+
+  return label;
+};
 
 const buildAddressLabel = (place) =>
   joinAddressParts([
@@ -35,12 +44,14 @@ export const getCurrentGpsLocation = async () => {
     console.log('Reverse geocoding failed:', error);
   }
 
+  const resolvedLabel = sanitizeLocationLabel(addressLabel, 'Current GPS location');
+
   return {
     source: 'gps',
     latitude,
     longitude,
-    area: addressLabel || 'GPS coordinates',
-    label: addressLabel || formatCoordinates(latitude, longitude),
+    area: resolvedLabel,
+    label: resolvedLabel,
   };
 };
 
@@ -93,13 +104,6 @@ export const formatSelectedLocation = (location) => {
     return 'No location selected yet.';
   }
 
-  if (
-    location.source === 'gps' &&
-    typeof location.latitude === 'number' &&
-    typeof location.longitude === 'number'
-  ) {
-    return `${location.label}\n${formatCoordinates(location.latitude, location.longitude)}`;
-  }
-
-  return location.label;
+  return sanitizeLocationLabel(location.label || location.area, 'Current GPS location');
 };
+
