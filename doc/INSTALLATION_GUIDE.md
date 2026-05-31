@@ -1,9 +1,8 @@
 # Installation Guide – MineShield
 
 ## Supported Devices
-- Android 10, 11, 12, 13
+- Android 13 , 15 and 16
 - Expo Go compatible devices
-- Recommended: Samsung Galaxy series (tested on S10, S20, S22)
 
 ## Method 1: Install via APK (Recommended for Testing)
 
