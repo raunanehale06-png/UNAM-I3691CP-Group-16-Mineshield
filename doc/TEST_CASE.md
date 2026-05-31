@@ -57,7 +57,7 @@
 | **FR Reference** | FR-001 |
 | **Priority** | High |
 | **Preconditions** | App is installed. User has valid email address. Internet connection active. |
-| **Test Data** | Validate Email adress and password |
+| **Test Data** | Email adress and password |
 | **Test Steps** | 1. Open MineShield app. 2. Navigate to Register screen. 3. Enter valid email address. 4. Enter valid password (min 6 characters). 5. Select role (Worker/Supervisor/Visitor). 6. Tap Register button. |
 | **Expected Result** | Account created successfully. User redirected to role-specific dashboard. Welcome message displayed. |
 | **Actual Result** | Account created. User redirected to Worker dashboard. Toast message: "Registration successful". Firebase Auth confirmed new UID. |
@@ -77,7 +77,7 @@
 | **FR Reference** | FR-002 |
 | **Priority** | High |
 | **Preconditions** | User has registered account. Valid credentials exist. |
-| **Test Data** | Email: worker@mineshield.com, Password: Test@12345 |
+| **Test Data** | Email: klimakiesha@gmail.com Password:  klim2005 |
 | **Test Steps** | 1. Open app. 2. Enter registered email and password. 3. Tap Login. 4. Verify dashboard loads. 5. Tap Logout button. 6. Verify return to login screen. 7. Attempt to access dashboard via back button. |
 | **Expected Result** | Login successful. Dashboard loads within 3 seconds. Logout clears session. Back button cannot access dashboard after logout. |
 | **Actual Result** | Login successful (2 seconds). Dashboard displayed correctly. Logout returned to login screen. Back button did not bypass logout. |
