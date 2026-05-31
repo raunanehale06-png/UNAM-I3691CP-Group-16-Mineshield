@@ -46,7 +46,7 @@ This section provides a summary of the test cases conducted.
 | **Preconditions** | App is installed and running. User has a valid email address. |
 | **Test Steps** | Open the MineShield app, navigate to the Register screen, enter a valid email address, enter a valid password, and tap the Register button. |
 | **Expected Result** | A new account is created successfully and the user is redirected to their dashboard. |
-| **Actual Result** | User entered valid email (klimakiesha@gmail.com) and password (minimum 6 characters). After tapping Register, a loading indicator appeared for 2 seconds. Account was created successfully and user was automatically redirected to the Worker dashboard. A welcome toast message "Registration successful" was displayed. Firebase Authentication confirmed new user UID created. |
+| **Actual Result** | User entered valid email (klimakiesha@gmail.com) and password (klim2005). After tapping Register, a loading indicator appeared for 2 seconds. Account was created successfully and user was automatically redirected to the Worker dashboard. A welcome toast message "Registration successful" was displayed. Firebase Authentication confirmed new user UID created. |
 | **Status** | Pass |
 | **Android 13** | Pass |
 | **Android 15** | Pass |
