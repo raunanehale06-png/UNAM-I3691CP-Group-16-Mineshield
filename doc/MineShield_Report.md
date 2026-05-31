@@ -63,7 +63,7 @@
 | **Expected Result** | User cannot access the dashboard after logout without logging in again. |
 | **Actual Result** | Pressing the back button within 2 seconds after logout brought the user back to the dashboard. Auth token was not cleared instantly. |
 | **Fix Applied** | Added immediate token invalidation. Cleared `AsyncStorage` before navigation. Added auth state listener to prevent back navigation. |
-| **Notes** | Retested on Samsung A03 Core (Android 13), Samsung S21 (Android 15), Samsung A12 (Android 16). Session now terminates correctly. |
+| **Notes** | Retested on Samsung A03 Core (Android 13), Samsung A06 (Android 15), Samsung Tab A9 (Android 16). Session now terminates correctly. |
 
 ---
 
@@ -76,7 +76,7 @@
 | **FR Reference** | FR-003, FR-015 |
 | **Date Found** | 26/05/2026 |
 | **Found By** | Teopolina Negonga |
-| **Device / Android Version** | Samsung A12 / Android 16 |
+| **Device / Android Version** | Samsung Tab A9 / Android 16 |
 | **Severity** | Critical |
 | **Status** | Fixed |
 | **Assigned To** | Messias Haibondi |
@@ -86,7 +86,7 @@
 | **Expected Result** | Image uploads to Firebase Storage and appears with the report. |
 | **Actual Result** | App crashed immediately after selecting an image. White screen appeared with error: `"Permission denied for MediaStore"` on Android 16. |
 | **Fix Applied** | Added new Android 16 storage permission handling. Updated the manifest with `READ_MEDIA_IMAGES`. Added `try-catch` for `MediaStore` exceptions. |
-| **Notes** | Works on Samsung A03 Core (Android 13), Samsung S21 (Android 15), and Samsung A12 (Android 16) after fix. |
+| **Notes** | Works on Samsung A03 Core (Android 13), Samsung A06 (Android 15), and Samsung Tab A9 (Android 16) after fix. |
 
 ---
 
@@ -122,7 +122,7 @@
 | **FR Reference** | FR-007 |
 | **Date Found** | 24/05/2026 |
 | **Found By** | Teopolina Negonga |
-| **Device / Android Version** | Samsung S21 / Android 15 |
+| **Device / Android Version** | Samsung A06 / Android 15 |
 | **Severity** | Major |
 | **Status** | Fixed |
 | **Assigned To** | Logic Josephath |
@@ -132,7 +132,7 @@
 | **Expected Result** | A confirmation modal appears within 1 second after a sharp shake, followed by vibration feedback. |
 | **Actual Result** | No modal appeared. No vibration feedback. No SOS triggered. Sensor service was not detecting motion. |
 | **Fix Applied** | Fixed accelerometer subscription logic. Adjusted detection threshold from `2.5g` to `2.0g`. Added permission check before starting the sensor listener. |
-| **Notes** | Retested on Samsung A03 Core (Android 13), Samsung S21 (Android 15), Samsung A12 (Android 16). Modal now appears within 1 second after a sharp shake. |
+| **Notes** | Retested on Samsung A03 Core (Android 13), Samsung A06 (Android 15), Samsung Tab A9 (Android 16). Modal now appears within 1 second after a sharp shake. |
 
 ---
 
@@ -145,7 +145,7 @@
 | **FR Reference** | FR-008 |
 | **Date Found** | 25/05/2026 |
 | **Found By** | Teopolina Negonga |
-| **Device / Android Version** | Samsung A12 / Android 16 |
+| **Device / Android Version** | Samsung Tab A9 / Android 16 |
 | **Severity** | Minor |
 | **Status** | Fixed |
 | **Assigned To** | Logic Josephath |
@@ -201,7 +201,7 @@
 | **Expected Result** | SOS alert includes accurate GPS coordinates and the correct street address. |
 | **Actual Result** | Location displayed as `"5093, Rhino Street, Ongwediva"` regardless of the actual test location. A hardcoded address was being used. |
 | **Fix Applied** | Removed the hardcoded test address. Connected actual GPS coordinates to the reverse geocoding API. |
-| **Notes** | Now displays the correct current address on Samsung A03 Core (Android 13), Samsung S21 (Android 15), and Samsung A12 (Android 16). |
+| **Notes** | Now displays the correct current address on Samsung A03 Core (Android 13), Samsung A06 (Android 15), and Samsung Tab A9 (Android 16). |
 
 ---
 
@@ -214,7 +214,7 @@
 | **FR Reference** | FR-011 |
 | **Date Found** | 26/05/2026 |
 | **Found By** | Teopolina Negonga |
-| **Device / Android Version** | Samsung S21 / Android 15 |
+| **Device / Android Version** | Samsung A06 / Android 15 |
 | **Severity** | Major |
 | **Status** | Fixed |
 | **Assigned To** | Klim Gelasius |
@@ -224,7 +224,7 @@
 | **Expected Result** | Dashboard loads within 3 seconds. |
 | **Actual Result** | Loading spinner displayed for 5 seconds. Real-time data appeared after 5.2 seconds due to a slow Firestore query. |
 | **Fix Applied** | Optimised Firestore queries. Added caching for static data. Reduced the number of listeners from 5 to 3. |
-| **Notes** | After fix, dashboard loads within 2.5 seconds on Samsung A03 Core (Android 13), Samsung S21 (Android 15), and Samsung A12 (Android 16). |
+| **Notes** | After fix, dashboard loads within 2.5 seconds on Samsung A03 Core (Android 13), Samsung A06 (Android 15), and Samsung Tab A9 (Android 16). |
 
 ---
 
@@ -237,7 +237,7 @@
 | **FR Reference** | FR-013 |
 | **Date Found** | 28/05/2026 |
 | **Found By** | Teopolina Negonga |
-| **Device / Android Version** | Samsung S21 / Android 15 |
+| **Device / Android Version** | Samsung A06 / Android 15 |
 | **Severity** | Minor |
 | **Status** | Fixed |
 | **Assigned To** | Annaliah Simasiku |
@@ -247,7 +247,7 @@
 | **Expected Result** | Percentages sum to 100% and match actual hazard counts. |
 | **Actual Result** | Percentages totalled 120%. The data aggregation formula was incorrect. |
 | **Fix Applied** | Fixed percentage calculation formula. Changed from `(count/total)*100` to a properly rounded calculation. Added a validation check. |
-| **Notes** | Percentages now sum correctly to 100% on Samsung A03 Core (Android 13), Samsung S21 (Android 15), and Samsung A12 (Android 16). |
+| **Notes** | Percentages now sum correctly to 100% on Samsung A03 Core (Android 13), Samsung A06 (Android 15), and Samsung Tab A9 (Android 16). |
 
 ---
 
@@ -260,7 +260,7 @@
 | **FR Reference** | FR-014 |
 | **Date Found** | 27/05/2026 |
 | **Found By** | Teopolina Negonga |
-| **Device / Android Version** | Samsung A12 / Android 16 |
+| **Device / Android Version** | Samsung A06 / Android 16 |
 | **Severity** | Major |
 | **Status** | Fixed |
 | **Assigned To** | Queen Tulikeni Hanghome |
@@ -270,7 +270,7 @@
 | **Expected Result** | The hazard reporting option is not visible to Visitor role users. |
 | **Actual Result** | The "Report Hazard" button was visible to Visitors. When tapped, the app showed an error but did not block navigation properly. |
 | **Fix Applied** | Removed the Report Hazard button from `VisitorNavigator`. Added role-based route protection. |
-| **Notes** | Visitor users now only see: safe zones, active alerts, safety guidelines, and emergency contact. Tested on Samsung A03 Core (Android 13), Samsung S21 (Android 15), and Samsung A12 (Android 16). |
+| **Notes** | Visitor users now only see: safe zones, active alerts, safety guidelines, and emergency contact. Tested on Samsung A03 Core (Android 13), Samsung A06 (Android 15), and Samsung Tab A9 (Android 16). |
 
 ---
 
