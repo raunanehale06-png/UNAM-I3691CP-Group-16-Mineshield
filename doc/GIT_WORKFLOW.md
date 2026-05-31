@@ -1,1 +1,1 @@
-
+# Git Workflow 1. Update develop branch: git checkout develop git pull origin develop 2. Create personal branch: git checkout -b feature/phase3-files-[YOUR-NAME] 3. Add your 6 files in correct directories 4. Stage changes: git add . 5. Commit: git commit -m "feat: add assigned files for Phase 3" 6. Push: git push origin feature/phase3-files-[YOUR-NAME] 7. Open Pull Request: Base → develop Compare → your feature branch Assign reviewer → Simon Shitana or Rauna Nehale
