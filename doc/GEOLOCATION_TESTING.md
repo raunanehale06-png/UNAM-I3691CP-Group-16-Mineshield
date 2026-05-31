@@ -199,9 +199,9 @@ The testing covers:
 
 | Device | Android Version | GPS Chipset | Notes |
 |--------|----------------|-------------|-------|
-| Samsung Galaxy A53 | 13 | Broadcom BCM4776 | Main supervisor test device |
-| Samsung Galaxy A32 | 12 | Qualcomm Snapdragon 720G | Worker demo device |
-| Samsung Galaxy A12 | 11 | MediaTek Helio P35 | Visitor demo device |
+| Samsung Tab A9 | 16 | Broadcom BCM4776 | Main supervisor test device |
+| Samsung A06 | 15 | Qualcomm Snapdragon 720G | Worker demo device |
+| Samsung A03 | 13 | MediaTek Helio P35 | Visitor demo device |
 
 ### B. Firestore Location Document Schema (example)
 
