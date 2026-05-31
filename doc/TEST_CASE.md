@@ -57,7 +57,7 @@
 | **FR Reference** | FR-001 |
 | **Priority** | High |
 | **Preconditions** | App is installed. User has valid email address. Internet connection active. |
-| **Test Data** | Email: testuser@mineshield.com, Password: Test@12345 |
+| **Test Data** | Validate Email adress and password |
 | **Test Steps** | 1. Open MineShield app. 2. Navigate to Register screen. 3. Enter valid email address. 4. Enter valid password (min 6 characters). 5. Select role (Worker/Supervisor/Visitor). 6. Tap Register button. |
 | **Expected Result** | Account created successfully. User redirected to role-specific dashboard. Welcome message displayed. |
 | **Actual Result** | Account created. User redirected to Worker dashboard. Toast message: "Registration successful". Firebase Auth confirmed new UID. |
