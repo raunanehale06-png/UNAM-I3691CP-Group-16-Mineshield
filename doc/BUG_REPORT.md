@@ -1,6 +1,35 @@
 # MineShield App — Bug Report
 
 **Report Date:** 31 May 2026
+# MineShield App — Bug Report
+
+| Field | Details |
+|-------|---------|
+| **Last Updated** | 31 May 2026 |
+| **Prepared By** | Teopolina Negonga |
+| **Role** | Testing & QA Lead |
+| **Project** | MineShield — Group 16 |
+| **Submission Date** | 31 May 2026 |
+
+---
+
+## Table of Contents
+
+1. [Report Overview](#report-overview)
+   - [Severity & Status Guide](#severity--status-guide)
+   - [Status Definitions](#status-definitions)
+   - [Bug Summary Table](#bug-summary-table)
+2. [Detailed Bug Reports](#detailed-bug-reports)
+   - [BUG-001: Session remains active after logout](#bug-001-session-remains-active-after-logout)
+   - [BUG-002: Image upload crashes app on Android 16](#bug-002-image-upload-crashes-app-on-android-16)
+   - [BUG-003: Zone classification shows hazard markers instead of zone colours](#bug-003-zone-classification-shows-hazard-markers-instead-of-zone-colours)
+   - [BUG-004: Fall detection never triggers after shaking phone](#bug-004-fall-detection-never-triggers-after-shaking-phone)
+   - [BUG-005: Noise level alert triggers at 70% instead of 85dB](#bug-005-noise-level-alert-triggers-at-70-instead-of-85db)
+   - [BUG-006: Supervisor receives duplicate push notifications](#bug-006-supervisor-receives-duplicate-push-notifications)
+   - [BUG-007: SOS alert shows incorrect last known location address](#bug-007-sos-alert-shows-incorrect-last-known-location-address)
+   - [BUG-008: Supervisor dashboard loads beyond 3 seconds](#bug-008-supervisor-dashboard-loads-beyond-3-seconds)
+   - [BUG-009: Pie chart displays incorrect hazard type percentages](#bug-009-pie-chart-displays-incorrect-hazard-type-percentages)
+   - [BUG-010: Visitor can see and access hazard reporting screen](#bug-010-visitor-can-see-and-access-hazard-reporting-screen)
 
 ---
 
