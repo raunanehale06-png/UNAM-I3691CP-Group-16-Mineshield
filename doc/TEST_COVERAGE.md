@@ -6,6 +6,21 @@
 | **Last Updated** | 31/05/2026 |
 | **Prepared By** | Teopolina Negonga |
 | **Role** | Testing Lead |
+| **Project** | MineShield — Group 16 |
+| **Submission Date** | 31 May 2026 |
+
+---
+
+## Table of Contents
+
+1. [Coverage Summary](#1-coverage-summary)
+2. [Functional Requirements Coverage](#2-functional-requirements-coverage)
+3. [Non-Functional Requirements Coverage](#3-non-functional-requirements-coverage)
+4. [Device Coverage Matrix](#4-device-coverage-matrix)
+5. [Test Type Coverage](#5-test-type-coverage)
+6. [Bug Coverage](#6-bug-coverage)
+7. [Uncovered Areas](#7-uncovered-areas)
+8. [Sign Off](#8-sign-off)
 
 ---
 
