@@ -1,26 +1,25 @@
-# UI Components Documentation
+# UI Components Documentation – Multi‑Theme Support
 
 **Author:** Tegameno Iyambo (UI/UX Lead)  
 **FR Reference:** All FRs (UI/UX supports every functional requirement)
 
 ## Overview
-This document describes the core reusable UI components built for MineShield. All components follow the high‑visibility light theme defined in `DESIGN_SYSTEM.md` and consume theme values from `ThemeContext`.
 
-## 1. Button Component
-**Path:** `src/components/common/Button.js`
+All MineShield components now support **four themes** (Light, Dark, Warm, Night). Components retrieve their colours from `ThemeContext`, which provides the current theme’s palette. Semantic variants (`danger`, `warning`, `safe`) remain unchanged across themes.
 
-### Props
-| Prop       | Type       | Default   | Description                                   |
-|------------|------------|-----------|-----------------------------------------------|
-| title      | string     | required  | Button text                                   |
-| onPress    | function   | required  | Click handler                                 |
-| variant    | string     | 'primary' | primary, secondary, danger, warning, outline  |
-| loading    | boolean    | false     | Shows spinner                                 |
-| disabled   | boolean    | false     | Disables interaction                          |
-| style      | object     | {}        | Custom container style                        |
-| textStyle  | object     | {}        | Custom text style                             |
+---
 
-### Example
+## 1. ThemeContext Usage
+
+### Import and use the hook
 ```jsx
-<Button title="Report Hazard" variant="primary" onPress={submit} />
-<Button title="SOS" variant="danger" loading={sending} />
+import { useTheme } from '../contexts/ThemeContext';
+
+const MyComponent = () => {
+  const theme = useTheme();
+  return (
+    <View style={{ backgroundColor: theme.colors.background }}>
+      <Text style={{ color: theme.colors.textPrimary }}>Hello</Text>
+    </View>
+  );
+};
